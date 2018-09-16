@@ -18,6 +18,8 @@ todo.save().then((doc)=>{
   res.send(doc);
 },(e)=>{
   res.status(400).send(e);
+}).catch((e)=>{
+  res.status(400).send();
 });
 });
 app.get('/todos',(req,res)=>{
@@ -25,6 +27,8 @@ app.get('/todos',(req,res)=>{
   res.send({todos});
   },(e)=>{
     res.status(400).send(e);
+  }).catch((e)=>{
+    res.status(400).send();
   });
 });
 //GET /todos/1231232
