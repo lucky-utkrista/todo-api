@@ -4,11 +4,9 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/TodoApp')
 .then(() => {
-   server.start();
- })
- .catch((err) => {
-   console.log('Error on start: ' + err.stack);
-   process.exit(1);
- });
+console.log("Connected to Database");
+}).catch((err) => {
+    console.log("Not Connected to Database ERROR! ", err);
+});
 
 module.exports ={mongoose};
