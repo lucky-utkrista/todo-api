@@ -22,7 +22,7 @@ todo.save().then((doc)=>{
   res.status(400).send();
 });
 
-
+});
 app.get('/todos',(req,res)=>{
   Todo.find().then((todos)=>{
   res.send({todos});
