@@ -16,7 +16,7 @@ var todo = new Todo({
 });
 todo.save().then((doc)=>{
   res.send(doc);
-    }).catch((e))=>{
+    }).catch((e)=>{
 //},(e)=>{
   res.status(400).send(e);
 });
@@ -25,7 +25,7 @@ app.get('/todos',(req,res)=>{
   Todo.find().then((todos)=>{
   res.send({todos});
   // },(e)=>{
-  }).catch((e))=>{
+  }).catch((e)=>{
     res.status(400).send(e);
   });
 });
