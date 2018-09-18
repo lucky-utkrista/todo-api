@@ -69,10 +69,16 @@ return User.findOne({
 });
 };
 
-UserSchema.pre('save', function(next)=>{
+UserSchema.pre('save', function(next){
   var user = this;
   if(user.isModified('password')){
-
+//user.hashedPassword, user.pawwword =hash, next()
+bcrypt.genSalt(10,(err,salt)=>{
+  bcrypt.hash(user.password, salt, (err, hash)=>{
+    user.password = hash;
+    next();
+  });
+});
   }else{
     next();
 
