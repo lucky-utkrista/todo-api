@@ -28,6 +28,7 @@
     "validator": "^10.7.1"
   },
   "devDependencies": {
+    "expect": "^23.6.0",
     "mocha": "^3.0.0"
   }
 }
